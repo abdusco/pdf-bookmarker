@@ -1,0 +1,7 @@
+# Bookmarks should be formatted as:
+# <title><separator><page #>
+# Example: Let separator be __
+# Table Of Contents__3
+# Foreword__4
+# Chapter 1__6
+Table of Contents__4
