@@ -1,15 +1,19 @@
 # PDF Bookmarker
-Parses given bookmark list and inserts bookmarks to given PDF.
+Creates bookmarks for PDFs from a list of bookmarks.
 
 ## Install
-Run `pipenv update` to install
+Run `pipenv update` to install requirements and set up a virtual environment
 
 ## Usage
-Run directly to launch GUI.  
-`pipenv run python bookmarks.py`
-
-Or specify `--ignore-gooey` to use it from commandline
-`pipenv run python bookmarks.py --ignore-gooey <ARGUMENTS>`
+```commandline
+# enable virtualenv
+pipenv shell
+# launch GUI
+python bookmarks.py
+# Or use CLI instead
+# python bookmarks.py --ignore-gooey <ARGUMENTS>
+python bookmarks.py --ignore-gooey -i input.pdf -o output.pdf -b bookmarks.txt --skip 1 --separator __
+```
 
 
 ## Arguments
@@ -18,11 +22,11 @@ Or specify `--ignore-gooey` to use it from commandline
 + `-b, --bookmark <bookmarks.txt>` Bookmark list file path
 + `--skip <5>` Skip this many pages until the numeration starts.  
   Use this to adjust page numbers given in TOC to actual pages in PDF.  
-  For instance giving `--skip 5` creates a bookmark entry for `Chapter 1__9` at page 14 
-+ `--separator <__>` Separator sequence to distinguish bookmark titles from page numbers 
+  For instance giving `--skip 5` creates a bookmark entry for `Chapter 1__9` at page 14.
++ `--separator <__>` Separator sequence to distinguish bookmark titles from page numbers. Defaults to `\t` (tab character)
 
 ### Bookmarks file format
-Bookmarks should be formatted as `<title><separator><page #>`
+Bookmarks should be formatted as `<title><separator><page #>`.
 
 ```text
 Cover__1
