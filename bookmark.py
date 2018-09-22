@@ -14,7 +14,7 @@ def parse_bookmarks(raw: str, skip: int = 0, separator: str = '\t') -> dict:
 
         title, _, page_num = line.partition(separator)
 
-        if not (title or page_num):
+        if not title or not page_num:
             raise SyntaxError(f'Invalid entry at line #{i + 1}')
 
         try:
