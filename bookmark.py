@@ -30,6 +30,7 @@ def get_parser() -> GooeyParser:
     parser.add_argument('-i', '--input',
                         metavar='Input path',
                         help='Path for the input file',
+                        required=True,
                         widget='FileChooser')
     parser.add_argument('-o', '--output',
                         metavar='Save path',
@@ -38,6 +39,7 @@ def get_parser() -> GooeyParser:
     parser.add_argument('-b', '--bookmark',
                         metavar='Bookmarks path',
                         help='Path for the bookmark list',
+                        required=True,
                         widget='FileChooser')
     option_group = parser.add_argument_group('Options')
     option_group.add_argument('--skip',
