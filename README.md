@@ -17,13 +17,15 @@ python bookmarks.py --ignore-gooey -i input.pdf -o output.pdf -b bookmarks.txt -
 
 
 ## Arguments
-+ `-i, --input <source.pdf>` Source PDF file path
-+ `-o, --output <save.pdf>` Destination PDF file path
-+ `-b, --bookmark <bookmarks.txt>` Bookmark list file path
-+ `--skip <5>` Skip this many pages until the numeration starts.  
++ `-i, --input <source.pdf>` Source PDF file path. Required
++ `-b, --bookmark <bookmarks.txt>` Bookmark list file path. Required
++ `-o, --output <save.pdf>` Destination PDF file path. Optional.  
+  If not specified, input filename will be suffixed with `__bookmarked`.
++ `--skip <5>` Skip this many pages until the numeration starts. Optional    
   Use this to adjust page numbers given in TOC to actual pages in PDF.  
   For instance giving `--skip 5` creates a bookmark entry for `Chapter 1__9` at page 14.
-+ `--separator <__>` Separator sequence to distinguish bookmark titles from page numbers. Defaults to `\t` (tab character)
++ `--separator <__>` Separator sequence to distinguish bookmark titles from page numbers. Optional.  
+  Defaults to `\t` (tab character)
 
 ### Bookmarks file format
 Bookmarks should be formatted as `<title><separator><page #>`.
