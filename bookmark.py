@@ -1,5 +1,6 @@
 from PyPDF2 import PdfFileReader, PdfFileWriter
 from gooey import Gooey, GooeyParser
+from os import path
 
 
 def parse_bookmarks(raw: str, skip: int = 0, separator: str = '\t') -> dict:
@@ -77,10 +78,14 @@ def main():
         raise
 
     input_pdf = PdfFileReader(open(input_path, 'rb'))
-
     bookmarked_pdf = add_bookmarks(input_pdf, bookmarks)
+
+    if not output_path:
+        # append '__bookmarked' to filename
+        output_path = '{0}__bookmarked{1}'.format(*path.splitext(input_path))
     with open(output_path, 'wb') as pdf_out:
         bookmarked_pdf.write(pdf_out)
+
     print('Done.')
 
 
