@@ -20,7 +20,7 @@ python bookmarks.py --ignore-gooey -i input.pdf -o output.pdf -b bookmarks.txt -
 + `-i, --input <source.pdf>` Source PDF file path. Required
 + `-b, --bookmark <bookmarks.txt>` Bookmark list file path. Required
 + `-o, --output <save.pdf>` Destination PDF file path. Optional.  
-  If not specified, input filename will be suffixed with `__bookmarked`.
+  If not specified, input filename suffixed with `__bookmarked` will be used as output filename.
 + `--skip <5>` Skip this many pages until the numeration starts. Optional    
   Use this to adjust page numbers given in TOC to actual pages in PDF.  
   For instance giving `--skip 5` creates a bookmark entry for `Chapter 1__9` at page 14.
